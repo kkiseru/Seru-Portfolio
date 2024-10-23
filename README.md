@@ -1,6 +1,6 @@
 ## Seru Portfolio 🎀
 Welcome to my portfolio! This is where I showcase my works as both a freelance illustrator and developer. 🦭🦭 
-With a focus on character design, logo creation, merchandise design and etc.
+<br> Dive into my journey in both illustration and development, featuring my projects and services I've done over the years. 
 
 ![Portfolio Demo](/Images/Demo.gif) 
 

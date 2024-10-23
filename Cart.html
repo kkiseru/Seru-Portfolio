@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serukki's Portfolio Cart</title>
+</head>
+<style>
+  *{
+    font-family: 'Times New Roman', Times, serif;
+}
+.nav{
+    color: greenyellow;
+    overflow: hidden;
+
+    position: fixed;
+    top: 0%;
+    left: 0%;
+
+    width: 100%;
+    
+    background-color:hsl(262, 67%, 39%);
+    
+}
+.nav a {
+    float: right;
+
+    color:#b3ff00;
+    padding: 10px ;
+    margin-left: 20px;
+    /*align-items: last baseline;
+    text-align: center;
+    padding: 14px 16px;*/
+    text-decoration: none;
+    font-size: 17px;
+    text-shadow: #a58bd1 90px;
+    font: bolder;
+
+    
+}
+.nav a:hover {
+color: white;
+text-shadow: #6f1cff 10px 0 20px;
+border-bottom: solid  white;
+border-width: 5px;
+}
+/* button of logo*/
+.nav a.active {
+    margin: 15px;
+    font-size: 27px;
+    color: white;
+}
+
+.nav .icon {
+display: none;
+}
+.logo{
+float: left;
+align-items: center;
+justify-content: center;
+}
+
+ul {
+float: right;
+list-style: none;
+padding:  0 50px 0 0;
+}
+
+ul li {
+display: inline-block;
+}
+
+ul li a {
+float: right;
+
+justify-content: space-around;
+text-decoration: none;
+
+/*color: #8291A5;
+padding: 8px 30px;
+border-radius: 7px;*/
+transition: all .3s ease;
+}
+
+ul li a:hover,
+ul li a.active {
+color: greenyellow;
+}
+
+
+#icon {
+position: absolute;
+right: 2%;
+margin: 15px;
+padding: 5px 7px 3px 7px;
+border-radius: 4px;
+cursor: pointer;
+transition: all .3s ease;
+}
+
+#icon svg {
+    margin: 15px;
+    color:hsl(262, 67%, 39%);
+height: 28px;
+transition: all .3s ease;
+}
+
+#icon:hover {
+color:#b3ff00;
+}
+#checkbox,
+#icon {
+
+display: none;
+}
+@media screen and (max-width: 768px) {
+
+
+
+ul {
+    position: fixed;
+    width: 100%;
+    height: calc(100vh);
+    background-color:  hsl(262, 67%, 39%);
+    top: 10px;
+    left: 0;
+    
+    text-align: center;
+    display: none;
+    margin-top: 60px;
+    flex-direction: row;
+}
+
+ul li {
+    
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0 10px 10px;
+   
+}
+
+ul li a {
+    
+    display: block;
+    padding: 10px 0;
+}
+
+
+#icon {
+    margin:0px 20px 0px 0px;
+    padding: 10px;
+    float: right;
+    display: block;
+    
+}
+
+#checkbox:checked~ul {
+    display: block;
+}
+
+
+
+}
+
+.bottom{
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+
+    width: 100%;
+    height: 5%;
+
+    background-color:antiquewhite;
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+
+}
+.bottom p{
+    font-size: 15px;
+    color:#9966f1;}
+body{
+    
+    z-index: -1;
+    background-color: #5121a5;
+    
+    border-image: fill 0 linear-gradient(#0003,#000);
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction:column;
+    
+    margin: 0%;
+    padding: 0%;
+    
+}
+.container{
+    background-color: white;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+
+    
+    justify-content: center;
+    width: 100%;
+    
+    
+    }
+    
+
+
+.container2 {
+    
+    color: #5121a5;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: row;
+    
+    background-image: url("Images/uibg.png");
+    
+            background-position:center;
+            background-size: cover;
+            background-repeat:no-repeat ;
+    
+
+    width: 100%;
+    
+    align-items: center;
+
+    padding: 0px 0px 300px 0px;
+}
+#cards{
+        background-color: transparent;
+        
+        justify-content: center;
+        align-self: center;
+        
+        overflow:hidden;
+        display:flex;
+        flex-direction: column;
+        
+        
+        
+    }
+    .card {
+    width: 700px;
+    max-height: 300px;
+
+    box-shadow: #000 10px;
+    
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    resize: horizontal;
+    backdrop-filter:blur(8px);
+    background-color: hsla(0, 0%, 100%,0.9);
+    margin: 20px;
+    
+}
+    
+.bcard {
+            max-width: 780px;
+            min-height: 250px;
+            background-color: #ebe9e9;
+            filter: drop-shadow(0px 0px 10px #ebe9e9);
+            border-radius: 16px;
+            
+            flex-wrap: wrap;
+            overflow: hidden;
+            
+          }
+          
+          .bimage {
+            
+            
+            max-height: 200px;
+            overflow: hidden;
+            
+          }
+          
+          .card img {
+            width: 56%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 250px;
+            
+          }
+          
+.bcontent {
+    text-align: center;
+    flex: 3 1 400px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 12px;
+          } 
+.card p{
+    font-size: 15px;
+    width: max-content;
+    text-align: center;
+    align-self:center;
+    margin: 0%;
+}
+.container2 button{
+    font-size: 15px;
+    background-color:#5121a5;
+    border: 0px;
+    border-radius: 20px 10px 20px 10px;
+    color: #b3ff00;
+    margin: 0%;
+    padding: 10px;
+    width: 30px;
+}
+.container2 button:hover{
+ border: solid 2px #5121a5;
+ background-color: transparent;
+ color: #5121a5;
+
+}
+.container3 button{
+    font-size: 15px;
+    background-color:#5121a5;
+    border: 0px;
+    border-radius: 20px 10px 20px 10px;
+    color: #b3ff00;
+    margin: 0%;
+    padding: 10px;
+}
+.container3 button:hover{
+ border: solid 2px #5121a5;
+ background-color: transparent;
+ color: #5121a5;
+
+}
+
+
+
+.merchcontext{
+    
+    max-width: 100%;
+    color: #5121a5;
+    margin: 50px 50px 50px 50px;
+
+}
+.merchcontext p{
+    padding: 0%;
+    margin: 0%;
+    color: #959595;
+}
+.merchcontext h1{
+    
+    padding: 0%;
+    margin: 0%;
+}
+#service h1{
+    color: #000;
+    
+}
+#service button{
+    color: #000;
+    margin: 0pc 0px 0px 70%;
+
+    font-size: 20px;
+    background-color:#5121a5;
+    border: 0px;
+    border-radius: 20px 10px 20px 10px;
+    color: #b3ff00;
+    padding: 20px;
+    
+
+}
+#service button:hover{
+ border: solid 2px #5121a5;
+ background-color: transparent;
+ color: #5121a5;
+
+}
+#Merch{
+    margin-top: 90px;
+}
+#bbutton{
+    width: 280px;
+}
+#Checkoutbutton{
+    background-color: #b3ff00;
+    color: #000;
+    width: 90%;
+    padding: 20px 0px 20px 0px;
+    border-radius: 0%;
+    margin-top: 20px;
+}
+
+</style>
+<body>
+<div class="nav">
+    <div class ="logo">
+        
+        <a href="SeruPortfolio.html" class="active">Serukki.</a>
+    </div>
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox" id="icon">
+    <svg style="fill:#b3ff00;" viewBox="0 0 50 50" width="40" height="16">
+        <rect y="5" width="50" height="5"></rect>
+        <rect y="25" width="50" height="5"></rect>
+        <rect y="45" width="50" height="5"></rect>
+    </svg>
+        <!--<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>-->
+    </label>
+
+    <ul>
+        <li><a href="Merch.html">Merch & Services</a></li>
+        <li><a href="Cart.html">Cart</a></li>
+        <li><a href="LoginSignupPage.html" id="Login">Login</a></li>
+</ul>
+</div>
+<div class="bottom">
+    <p> Still in construction.______Created 6 Nov______Last Updated:17 Nov______Data
+        collection:17 Nov </p></div>
+
+<div class="container" id="Merch">
+    <div class="merchcontext" id="service">
+        <h1>Cart</h1>
+        
+    </div>
+    <div class="container2" id="cards">
+        <!--<div class="merchcontext">
+            Merch & Services
+        </div>-->
+        <div class="card">
+            
+            <div class="bcard" id="jettmerch">
+                <p class="bcontent">1.</p>
+                <div class="bimage">
+                    <img src="Images/jettkeyring.png" alt="">
+                    
+                </div>
+                <div class="bcontent">
+                    <p>Valorant Jett Keychain</p>
+                    <p>$10</p>
+                    <button id="bbutton" >-</button>
+                    <p>1</p>
+                    <button id="bbutton" >+</button>
+                </div>
+            </div>
+        <!--<div class="bcard">
+            <div class="bimage">
+                <img src="Images/jettkeyring.png" alt="">
+            </div>
+            <div class="bcontent">
+                <p>Valorant Jett Keychain</p>
+                <button id="bbutton" >Add to Cart</button>
+            </div>
+        </div>-->
+    </div>
+    <div class="card">
+        <div class="bcard">
+            <p class="bcontent">2.</p>
+            <div class="bimage">
+                <img src="Images/shirt.png">
+            </div>
+            <div class="bcontent">
+                <p>NUSECE T-Shirt</p>
+                <p>$25</p>
+                <button id="bbutton" >-</button>
+                <p>5</p>
+                <button id="bbutton" >+</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="bcard">
+            <p class="bcontent">3.</p>
+            <div class="bimage">
+                <img src="Images/ElleMerch.jpg">
+            </div>
+            <div class="bcontent">
+                <p>Merch Design</p>
+                <p>$250</p>
+                <p>x1</p>
+                <button id="bbutton" >Check Status</button>
+            </div>
+        </div>
+    </div>
+    <button id="Checkoutbutton" >Proceed to CheckOut</button>
+    </div>
+</body>

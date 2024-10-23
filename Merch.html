@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serukki's Portfolio Merch & Services</title>
+</head>
+<style>
+  *{
+    font-family: 'Times New Roman', Times, serif;
+}
+.nav{
+    color: greenyellow;
+    overflow: hidden;
+
+    position: fixed;
+    top: 0%;
+    left: 0%;
+
+    width: 100%;
+    
+    background-color:hsl(262, 67%, 39%);
+    
+}
+.nav a {
+    float: right;
+
+    color:#b3ff00;
+    padding: 10px ;
+    margin-left: 20px;
+    /*align-items: last baseline;
+    text-align: center;
+    padding: 14px 16px;*/
+    text-decoration: none;
+    font-size: 17px;
+    text-shadow: #a58bd1 90px;
+    font: bolder;
+
+    
+}
+.nav a:hover {
+color: white;
+text-shadow: #6f1cff 10px 0 20px;
+border-bottom: solid  white;
+border-width: 5px;
+}
+/* button of logo*/
+.nav a.active {
+    margin: 15px;
+    font-size: 27px;
+    color: white;
+}
+
+.nav .icon {
+display: none;
+}
+.logo{
+float: left;
+align-items: center;
+justify-content: center;
+}
+
+ul {
+float: right;
+list-style: none;
+padding:  0 50px 0 0;
+}
+
+ul li {
+display: inline-block;
+}
+
+ul li a {
+float: right;
+
+justify-content: space-around;
+text-decoration: none;
+
+/*color: #8291A5;
+padding: 8px 30px;
+border-radius: 7px;*/
+transition: all .3s ease;
+}
+
+ul li a:hover,
+ul li a.active {
+color: greenyellow;
+}
+
+
+#icon {
+position: absolute;
+right: 2%;
+margin: 15px;
+padding: 5px 7px 3px 7px;
+border-radius: 4px;
+cursor: pointer;
+transition: all .3s ease;
+}
+
+#icon svg {
+    margin: 15px;
+    color:hsl(262, 67%, 39%);
+height: 28px;
+transition: all .3s ease;
+}
+
+#icon:hover {
+color:#b3ff00;
+}
+#checkbox,
+#icon {
+
+display: none;
+}
+@media screen and (max-width: 768px) {
+
+
+
+ul {
+    position: fixed;
+    width: 100%;
+    height: calc(100vh);
+    background-color:  hsl(262, 67%, 39%);
+    top: 10px;
+    left: 0;
+    
+    text-align: center;
+    display: none;
+    margin-top: 60px;
+    flex-direction: row;
+}
+
+ul li {
+    
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0 10px 10px;
+   
+}
+
+ul li a {
+    
+    display: block;
+    padding: 10px 0;
+}
+
+
+#icon {
+    margin:0px 20px 0px 0px;
+    padding: 10px;
+    float: right;
+    display: block;
+    
+}
+
+#checkbox:checked~ul {
+    display: block;
+}
+
+
+
+}
+
+.bottom{
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+
+    width: 100%;
+    height: 5%;
+
+    background-color:antiquewhite;
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+
+}
+.bottom p{
+    font-size: 15px;
+    color:#9966f1;}
+body{
+    
+    z-index: -1;
+
+    
+    border-image: fill 0 linear-gradient(#0003,#000);
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction:column;
+    
+    margin: 0%;
+    padding: 0%;
+    
+}
+.container{
+    
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+
+    
+    justify-content: center;
+    width: 100%;
+    
+    
+    }
+#mainpg{
+    height: 607px;
+    border-width: 0px 0px 7px 0px;
+    border-bottom: solid 7px #5121a5;
+    border-style: dotted;
+    background-image: url(Images/merchmodel.jpg);
+    opacity:0.;
+    
+    background-position:center;
+    background-size: cover;
+    background-repeat:no-repeat ;
+
+}
+/*#mainpg{
+    background-color: white;
+    background-image: url("/Users/G-nix/Desktop/merchmodel.png");
+    
+    background-position:center;
+    background-size: cover;
+    background-repeat:no-repeat ;
+    opacity: 0.7;
+}*/
+.c1{
+    position: absolute;
+    top: 15%;
+    bottom: 15%;
+    margin:20px 50px 50px 50px;
+
+    background-color: transparent;
+
+    height: 60%;
+
+    transition: 0.3s ease-in-out;
+    /*filter:drop-shadow( 0 0 7px rgb(53, 26, 100));*/
+
+    position: relative;
+    width:500px;
+
+
+    transition: transform 0.3s ease-in-out;
+
+
+}
+.c1 h1{
+    background-color:transparent;
+    max-width: 300px;
+    font-family: 'Insomnia', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #6f1cff;
+    font-size: 50px;
+    font-weight:bolder;
+    margin:0px;
+    padding: 0px 0px 0px 0px;
+
+}
+
+.c1 p{
+
+width: 90%;
+color: #959595;
+margin-bottom: 30px;
+
+
+}
+
+.img1{
+z-index: -1;
+filter:brightness(80%);
+filter: opacity(70%);
+transition: .5s ease-in-out;
+
+
+margin: 100px 60px 60px 50px;
+width:560px;
+height:660px;
+}
+
+
+
+.button1 {
+    font-style: none;
+    color:#5121a5;
+    font-family: 'Times New Roman', Times, serif;
+    width: 200px;
+    
+    
+    font-size:20px;
+
+    letter-spacing: 2px;
+    font-weight: bolder;
+    text-decoration-line: none;
+    border-radius: 10px;
+    
+    margin-right: 30px;
+    outline: none;
+    border: 3px;
+    transition: all ease 0.5s;
+    padding:15px 30px 15px 30px;
+    background-color:  #b3ff00;
+    transition: all ease 0.9s;
+}
+
+.button1:hover{
+        border: solid #5121a5;
+        transform: scale(1.1);
+        border-spacing: 15px 5px;
+        background-color:#5121a5;
+        color: #b3ff00;
+
+    }
+
+button:hover{
+        border: solid #5121a5;
+        transform: scale(1.1);
+        border-spacing: 15px 5px;
+        background-color:#5121a5;
+        color: #b3ff00;
+
+    }
+
+    
+    .container3{
+
+    background-image: url("Images/uibgService.png");
+
+            background-position:center;
+            background-size: cover;
+            background-repeat:no-repeat ;
+
+    color: #3f2e79;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 100px;
+
+
+    width: 100%;
+
+    align-items: center;
+}
+#service p{
+color: rgb(220, 214, 214);
+}
+.container2 {
+    padding: 50px;
+    color: #5121a5;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    
+    background-image: url("Images/uibg.png");
+    
+            background-position:center;
+            background-size: cover;
+            background-repeat:no-repeat ;
+    
+
+    width: 100%;
+    
+    align-items: center;
+}
+#cards{
+        background-color: transparent;
+        
+        justify-content: center;
+        align-self: center;
+        
+        overflow:hidden;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        
+    }
+    .card {
+    max-width: 200px;
+    max-height: 250px;
+
+    box-shadow: #000 10px;
+    
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    resize: horizontal;
+    backdrop-filter:blur(8px);
+    background-color: hsla(0, 0%, 100%,0.9);
+    margin: 20px;
+    
+}
+    
+.bcard {
+            max-width: 780px;
+            min-height: 250px;
+            background-color: #ebe9e9;
+            filter: drop-shadow(0px 0px 10px #ebe9e9);
+            border-radius: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            
+          }
+          
+          .bimage {
+            
+            flex: 1 0 240px;
+            max-height: 150px;
+            overflow: hidden;
+            margin-top:20px;
+          }
+          
+          .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            
+          }
+          
+.bcontent {
+    text-align: center;
+    flex: 3 1 400px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+          } 
+.card p{
+    font-size: 15px;
+    width: max-content;
+    text-align: center;
+    align-self:center;
+    margin: 0%;
+}
+.container2 button{
+    font-size: 15px;
+    background-color:#5121a5;
+    border: 0px;
+    border-radius: 20px 10px 20px 10px;
+    color: #b3ff00;
+    margin: 0%;
+    padding: 10px;
+}
+.container2 button:hover{
+ border: solid 2px #5121a5;
+ background-color: transparent;
+ color: #5121a5;
+
+}
+.container3 button{
+    font-size: 15px;
+    background-color:#5121a5;
+    border: 0px;
+    border-radius: 20px 10px 20px 10px;
+    color: #b3ff00;
+    margin: 0%;
+    padding: 10px;
+}
+.container3 button:hover{
+ border: solid 2px #5121a5;
+ background-color: transparent;
+ color: #5121a5;
+
+}
+
+
+#viper{
+    background-image: url(/Users/G-nix/Desktop/lotusbgomen.jpg);
+    
+            background-position:center;
+            background-size: cover;
+            background-repeat:no-repeat ;
+}
+.merchcontext{
+    max-width: 100%;
+    color: #5121a5;
+    margin: 50px 50px 50px 50px;
+
+}
+.merchcontext p{
+    padding: 0%;
+    margin: 0%;
+    color: #959595;
+}
+.merchcontext h1{
+    font-size: 55px;
+    padding: 0%;
+    margin: 0%;
+}
+#service h1{
+    color: #000;
+}
+#Merch{
+    margin-top: 607px;
+}
+
+</style>
+<body>
+<div class="nav">
+    <div class ="logo">
+        
+        <a href="SeruPortfolio.html" class="active">Serukki.</a>
+    </div>
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox" id="icon">
+    <svg style="fill:#b3ff00;" viewBox="0 0 50 50" width="40" height="16">
+        <rect y="5" width="50" height="5"></rect>
+        <rect y="25" width="50" height="5"></rect>
+        <rect y="45" width="50" height="5"></rect>
+    </svg>
+        <!--<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>-->
+    </label>
+
+    <ul>
+        <li><a href="Merch.html">Merch & Services</a></li>
+        <li><a href="Cart.html">Cart</a></li>
+        <li><a href="LoginSignupPage.html" id="Login">Login</a></li>
+</ul>
+</div>
+<div class="bottom">
+    <p> Still in construction.______Created 6 Nov______Last Updated:17 Nov______Data
+        collection:17 Nov </p>
+    </div>
+<div class="container" id="mainpg">
+    <!--<div class="img1">
+        <img src="C:\Users\G-nix\Desktop\nusece_gif_merch.gif" width="span"; height="700px";>
+    </div>-->
+    <div class="c1">
+        <h1><b>MERCH</b></h1>
+        <p>Step into a world of style and self-expression with our exclusive collection of cool and curated merchandise! Elevate your wardrobe and showcase your unique personality with our handpicked selection of trendy apparel, accessories, and lifestyle products. </p>
+        
+        <button class="button1" >Get it now !</button>
+        
+    </div> 
+</div> 
+<div class="container" id="Merch">
+    <div class="container2" id="cards">
+        <!--<div class="merchcontext">
+            Merch & Services
+        </div>-->
+        <div class="card">
+            <div class="bcard" id="jettmerch">
+                <div class="bimage">
+                    <img src="Images/jettkeyring.png" alt="">
+                </div>
+                <div class="bcontent">
+                    <p>Valorant Jett Keychain</p>
+                    <p>$10</p>
+                    <button id="bbutton" >Add to Cart</button>
+                </div>
+            </div>
+        <!--<div class="bcard">
+            <div class="bimage">
+                <img src="Images/jettkeyring.png" alt="">
+            </div>
+            <div class="bcontent">
+                <p>Valorant Jett Keychain</p>
+                <button id="bbutton" >Add to Cart</button>
+            </div>
+        </div>-->
+    </div>
+    <div class="card">
+        <div class="bcard">
+            <div class="bimage">
+                <img src="Images/shirt.png">
+            </div>
+            <div class="bcontent">
+                <p>NUSECE T-shirt</p>
+                <p>$25</p>
+                <button id="bbutton" >Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="bcard">
+            <div class="bimage">
+                <img src="Images/Viper.png">
+            </div>
+            <div class="bcontent">
+                <p>Viper Print</p>
+                <p>$10</p>
+                <button id="bbutton" >Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="bcard">
+            <div class="bimage">
+                <img src="Images/Viper.png">
+            </div>
+            <div class="bcontent">
+                <p>Viper Print</p>
+                <p>$10</p>
+                <button id="bbutton" >Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+  
+<div class="container3" id="cards">
+    <div class="merchcontext" id="service">
+        <h1>Services</h1><br>
+        <p>Embark on a journey of artistic self-discovery with my personalized art commission service. As a dedicated artist, I will meticulously bring your unique vision to life, creating a bespoke masterpiece that reflects your individual style and emotions. From canvas to completion, experience the satisfaction of owning a truly one-of-a-kind creation tailored to your artistic aspirations.</p>
+    </div>
+    <div class="card">
+        <div class="bcard">
+            <div class="bimage">
+                <img src="Images/Commision.png">
+            </div>
+            <div class="bcontent">
+                <p>Illustration Commision</p>
+                <button id="bbutton" >I'm Interested</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="bcard">
+            <div class="bimage">
+                <img src="Images/ElleMerch.jpg">
+            </div>
+            <div class="bcontent">
+                <p>Merch Design</p>
+                <button id="bbutton" >I'm Interested</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="bcard">
+            <div class="bimage">
+                <img src="Images/aquascape.jpg">
+            </div>
+            <div class="bcontent">
+                <p>Aquascaping Commision</p>
+                <button id="bbutton" >I'm Interested</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="container"></div>
+</body>
